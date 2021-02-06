@@ -710,7 +710,7 @@ public abstract class BaseCommand {
      * @param cmds The possibilities to return.
      * @return All possible options. This may be empty.
      */
-    private static List<String> filterTabComplete(String arg, List<String> cmds) {
+    protected List<String> filterTabComplete(String arg, List<String> cmds) {
         return cmds.stream()
                 .distinct()
                 .filter(cmd -> cmd != null && (arg.isEmpty() || ApacheCommonsLangUtil.startsWithIgnoreCase(cmd, arg)))
